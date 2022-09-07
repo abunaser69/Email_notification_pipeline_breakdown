@@ -19,3 +19,12 @@ def get_extract():
   df4_pandas = df1_pandas.append([df2_pandas, df3_pandas], ignore_index = False).fillna('')
   
   return  df4_pandas
+
+date =  dt.datetime.strftime (dt.datetime.today(), "%Y-%m-%d")
+filename = f"{extract}_{date}" 
+print(filename)
+    
+# create extract
+df_extract_pandas = get_extract()
+#convert pandas df to pyspark dataframe
+df_extract = spark.createDataFrame(df_extract_pandas.astype(str))
