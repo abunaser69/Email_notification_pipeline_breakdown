@@ -9,7 +9,7 @@ def get_extract():
                                    where system_created_date  >= (select current_date) \
                                    order by system_created_date desc"
 
-table3_sql =  "select * from table3 \
+  table3_sql =  "select * from table3 \
                                            where system_created_date  >= (select current_date) \
                                            order by submission_id desc"
 
